@@ -30,30 +30,7 @@ O código HTML tem a seguinte estrutura:
 - **HTML básico**: Como criar um arquivo HTML simples.
 - **Responsividade**: Como fazer sua página adaptar-se a diferentes tamanhos de tela (mobile, tablet, desktop).
 - **Uso de metadados**: Como configurar as informações da sua página, como a codificação de caracteres e o título da página.
+- **DE FORMA SIMPLES PARA PODER UTILIZAR NO DIA DIA NAS EMPRESAS E SUBIR O NIVEL UTILIZANDO NODE**
+  
 
-### Fazendo o código funcionar com Node.js (opcional)
 
-Se você deseja levar isso para o próximo nível e aprender como servir sua página HTML com Node.js, temos um exemplo de código em Node.js:
-
-1. Crie um arquivo `app.js` no mesmo diretório onde está o `index.html`.
-2. Adicione o seguinte código para criar um servidor local que exibe sua página HTML:
-
-```javascript
-const http = require('http');
-const fs = require('fs');
-
-const server = http.createServer((req, res) => {
-    fs.readFile('index.html', (err, data) => {
-        if (err) {
-            res.writeHead(500, { 'Content-Type': 'text/plain' });
-            res.end('Erro ao carregar o arquivo HTML');
-            return;
-        }
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(data);
-    });
-});
-
-server.listen(3000, () => {
-    console.log('Servidor rodando em http://localhost:3000');
-});
